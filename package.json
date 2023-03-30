@@ -1,0 +1,23 @@
+{
+  "name": "node_performance",
+  "version": "1.0.0",
+  "description": "Techniques to improve performance of NodeJS server utilizing Cluster, Load Balancing, PM2 &amp; Worker Threads!🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prasenjit-3433/Node-Server-Performance-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prasenjit-3433/Node-Server-Performance-/issues"
+  },
+  "homepage": "https://github.com/Prasenjit-3433/Node-Server-Performance-#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
