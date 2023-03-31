@@ -1,4 +1,8 @@
+const cluster = require('cluster');
+
 const express = require('express');
+
+cluster.schedulingPolicy = cluster.SCHED_RR;
 
 const app = express();
 
@@ -11,12 +15,21 @@ function delay(duration) {
 }
 
 app.get('/', (req, res) => {
-    res.send('Performance example');
+    res.send(`Performance example: ${process.pid}`);
 });
 
 app.get('/timer', (req, res) => {
     delay(9000);
-    res.send('Ding dong!...');
+    res.send(`Ding dong! - ${process.pid}`);
 });
 
-app.listen(8000);
+if (cluster.isMaster) {
+    console.log('Master has been started...');
+    cluster.fork();
+    cluster.fork();
+} else {
+    console.log('Worker process started.');
+    app.listen(8000);
+}
+
+console.log('Running server.js');
