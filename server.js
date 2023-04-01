@@ -1,5 +1,4 @@
 const cluster = require('cluster');
-const os = require('os');
 
 const express = require('express');
 
@@ -20,8 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/timer', (req, res) => {
-    delay(9000);
-    res.send(`Ding dong! - ${process.pid}`);
+    delay(4000);
+    res.send(`Beep beep! - ${process.pid}`);
 });
 
 console.log('Worker process started.');
